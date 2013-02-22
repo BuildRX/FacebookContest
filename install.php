@@ -29,7 +29,7 @@ processErrors();
 
 $check_table_result = $mysqli->query('SHOW TABLES LIKE '.DATABASE_PREFIX.'entries');
 if($check_table_result->num_rows == 1) {
-	$errors[] = 'The script has already been installed.  Please delete install.php.'
+	$errors[] = 'The script has already been installed.  Please delete install.php.';
 }
 processErrors();
 
