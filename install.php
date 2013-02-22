@@ -16,7 +16,7 @@ if(mysql_escape_string(DATABASE_PREFIX) != DATABASE_PREFIX) $errors[] = 'Invalid
 processErrors($errors);
 
 $testAuthUrl = 'https://graph.facebook.com/oauth/access_token?client_id='.FACEBOOK_APP_ID.'&client_secret='.FACEBOOK_SECRET_KEY.'&grant_type=client_credentials';
-$potentialAuthError = json_decode($string,true);
+$potentialAuthError = json_decode(file_get_contents($testAuthUrl),true);
 if(json_last_error() == JSON_ERROR_NONE) {
 	$errors[] = 'Facebook: '.$potentialAuthError['error']['message'];
 }
@@ -43,8 +43,7 @@ $installSql =
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;';
 $mysqli->query($installSql);
 
-echo '<h1>Success</h1>';
-echo '<h3>Please delete install.php.</h3>';
+header('Location: https://www.facebook.com/dialog/pagetab?app_id='.FACEBOOK_APP_ID.'&display=popup&next='.BASE_URL);
 mysqli_close($mysqli);
 
 
