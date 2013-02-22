@@ -25,13 +25,13 @@ $mysqli = new mysqli(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD, DATABA
 if (mysqli_connect_errno()) {
 	$errors[] = 'Database Connection Error: '.mysqli_connect_error();
 }
-processErrors();
+processErrors($errors);
 
 $check_table_result = $mysqli->query('SHOW TABLES LIKE '.DATABASE_PREFIX.'entries');
 if($check_table_result->num_rows == 1) {
 	$errors[] = 'The script has already been installed.  Please delete install.php.';
 }
-processErrors();
+processErrors($errors);
 
 $installSql = 
 'CREATE TABLE IF NOT EXISTS `'.DATABASE_PREFIX.'entries` (
