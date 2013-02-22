@@ -10,9 +10,9 @@ if(DATABASE_USERNAME == '') $errors[] = 'Database Username Missing.';
 if(DATABASE_PASSWORD == '') $errors[] = 'Database Password Missing.';
 if(DATABASE_NAME == '') $errors[] = 'Database Name Missing.';
 if(PRELIKE_BLOCK == '') $errors[] = 'Pre Like Block File Name Missing.';
-if(ENTRYFORM_BLOCK == '') $errors[] = 'Entry Form Block File Name Missing.';
 if(POSTLIKE_BLOCK == '') $errors[] = 'Post Like Block File Name Missing.';
-if(mysql_real_escape_string(DATABASE_PREFIX) != DATABASE_PREFIX) $errors[] = 'Invalid Database Prefix';
+if(THANKS_BLOCK == '') $errors[] = 'Thanks Block File Name Missing.';
+if(mysql_escape_string(DATABASE_PREFIX) != DATABASE_PREFIX) $errors[] = 'Invalid Database Prefix';
 processErrors($errors);
 
 $testAuthUrl = 'https://graph.facebook.com/oauth/access_token?client_id='.FACEBOOK_APP_ID.'&client_secret='.FACEBOOK_SECRET_KEY.'&grant_type=client_credentials';

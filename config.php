@@ -19,6 +19,6 @@ define('DATABASE_PREFIX','');
 // Application Setup      //
 ////////////////////////////
 define('PRELIKE_BLOCK','prelike.html');
-define('ENTRYFORM_BLOCK','entry.html');
-define('POSTLIKE_BLOCK','postlike.html');
+define('POSTLIKE_BLOCK','entry.html');
+define('THANKS_BLOCK','thanks.html');
 ?>
