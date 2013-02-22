@@ -13,6 +13,12 @@ if($page_data['liked'] == "1"){
 	<head>
 		<title></title>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<style type="text/css">
+			body {
+				padding:0;
+				margin:0;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="content">
