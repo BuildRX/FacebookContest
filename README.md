@@ -8,3 +8,6 @@ This is a standard contest which features a pre-like then allows users to submit
 Setup Guide:
 Fill in all of constants in config.php.
 
+Run install.php to create the database table.
+
+Edit the blocks in the skin folder.  Be sure that form elements keep their names and IDs.
