@@ -27,14 +27,19 @@ if($page_data['liked'] == "1"){
 		<script type="text/javascript">
 			$(document).ready(function () {
 				$("#submit").click(function () {
-					$.ajax({
-						type: "GET",
-						data: "email="+$('#email').val(),
-						url: "submit.php"
-					})
-					$.get('skin/<?php echo THANKS_BLOCK; ?>', function(data) {
-						$('#content').html(data);
-					});
+					var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+					if(!$('#email').val().match(re)) {
+						$('#error').show();
+					} else {
+						$.ajax({
+							type: "GET",
+							data: "email="+$('#email').val(),
+							url: "submit.php"
+						})
+						$.get('skin/<?php echo THANKS_BLOCK; ?>', function(data) {
+							$('#content').html(data);
+						});
+					}
 				});
 			});
 		</script>
